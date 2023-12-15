@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import axios from "axios";
 
 function App() {
   const [notes, setNotes] = useState(0);
 
   useEffect(() => {
-    console.log("E·");
+    const baseUrl = "/api/notes";
+    axios.get(baseUrl).then((response) => console.log("RES", response));
   }, []);
 
   return (
