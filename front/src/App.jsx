@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <h1>EYY</h1>
+      <h1>WHATS UP</h1>
       <div className="card">
         <button onClick={() => setNotes((count) => count + 1)}>
           count is {notes}
