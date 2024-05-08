@@ -1,0 +1,295 @@
+.pointerCursor {
+  cursor: pointer !important;
+}
+
+.ant-table-filter-trigger {
+  font-size: 17px;
+  color: rgb(132, 132, 132);
+}
+
+.ant-table-filter-trigger:hover {
+  color: rgb(87, 87, 87);
+}
+
+.tableSearchBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 1.6rem;
+  gap: 16px;
+  position: sticky;
+  left: 0;
+}
+
+.tableSearchBar > * {
+  max-width: 400px;
+}
+
+/* .ant-table-cell-fix-right {
+	box-shadow: -0.2em 0 3px black;
+} */
+
+/* .ant-table-wrapper {
+	max-width: none;
+	min-width: max-content;
+} */
+
+.ant-table table {
+  max-width: none;
+  min-width: max-content !important;
+  /* width: 100%; */
+}
+
+/* .ant-table-cell {
+	width: auto;
+	white-space: nowrap;
+} */
+
+/* .ant-table-wrapper { */
+/* flex-grow: 1;
+	overflow: hidden;
+	max-height: -moz-available;
+	max-height: -webkit-fill-available;
+	max-height: fill-available; */
+
+/* } */
+
+.MuiTableContainer-root th,
+.MuiTableContainer-root td {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.MuiTableHead-root th,
+.MuiTableRow-footer td {
+  background-color: #fafafa;
+}
+
+.MuiTableBody-root th {
+  background-color: white;
+}
+
+/* FOOTER */
+.MuiTableFooter-root {
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  position: sticky;
+}
+
+.MuiTableCell-footer {
+  border-top: 1px solid rgba(224, 224, 224, 1);
+}
+
+.MuiTableCell-head {
+  white-space: nowrap;
+  padding-right: 0;
+}
+.tableFilterOption {
+  display: flex;
+  align-items: center;
+  /* cursor: pointer; */
+}
+
+.tableFilterOption * {
+  cursor: pointer;
+}
+
+.lastRow .MuiTableCell-root {
+  /* border-bottom: none; */
+  border-bottom: 1px solid transparent;
+}
+
+.loadingDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.loadingDiv.isLoading {
+  opacity: 1;
+}
+
+.ant-table-content {
+  overflow: auto;
+}
+
+.tableFilterOption .MuiCheckbox-root {
+  padding: 0;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+.MuiTableBody-root
+  > .MuiTableRow-root:not(.expandableRow):not(.noHover):hover
+  .MuiTableCell-root,
+.highlightedRow .MuiTableCell-root,
+.highlightedRow .MuiSvgIcon-root {
+  background-color: var(--color-secondary) !important;
+  color: white !important;
+  .roundedVirgulilla {
+    color: white !important;
+  }
+}
+
+.MuiButtonBase-root.Mui-disabled:not(.MuiIconButton-root) {
+  pointer-events: auto;
+  background-color: #e0e0e0 !important;
+  color: #b6b6b6;
+}
+
+.bigButton {
+  display: inline-flex;
+}
+
+.smallButton {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .bigButton {
+    display: none;
+  }
+
+  .smallButton {
+    display: inline-flex;
+  }
+}
+
+.tableSearchBar .MuiInputBase-input {
+  padding: 14px;
+}
+
+.tableSearchBar
+  .MuiInputLabel-root:not(.Mui-focused):not(.MuiFormLabel-filled) {
+  transform: translate(14px, 16px) scale(1);
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+  padding-right: 0;
+  .MuiIconButton-root {
+    margin-left: 10px;
+  }
+}
+
+.darkTable {
+  .MuiDivider-root {
+    background-color: white;
+  }
+
+  .MuiTableHead-root .MuiTableCell-root .MuiIconButton-root .MuiSvgIcon-root {
+    color: white;
+  }
+}
+
+.MuiTableBody-root
+  .MuiTableRow-root
+  .MuiTableCell-root
+  .MuiSvgIcon-root
+  // , .MuiTableBody-root
+  // .MuiTableRow-root
+  // .MuiTableCell-root
+  // > .MuiIconButton-root
+  // .MuiSvgIcon-root
+{
+  // width: 2.5rem;
+  // height: 2.5rem;
+  color: var(--color-primary);
+}
+
+.MuiTableBody-root .MuiTableCell-root .MuiIconButton-root {
+  padding: 0;
+}
+
+.MuiTableHead-root .MuiTableCell-root .MuiIconButton-root {
+  margin-left: 10px;
+}
+
+.MuiTableBody-root
+  .MuiTableRow-root:hover:not(.expandableRow)
+  .MuiTableCell-root
+  .MuiSvgIcon-root {
+  color: white;
+}
+
+.darkTable {
+  border-radius: 1.5rem;
+  .MuiTableCell-root {
+    color: var(--color-background);
+    background-color: var(--color-primary);
+  }
+
+  .MuiTableFooter-root {
+    .MuiButtonBase-root:not(.Mui-disabled),
+    .MuiInputBase-root {
+      .MuiSvgIcon-root {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+    }
+
+    .MuiTableCell-root {
+      border-bottom-width: 0px;
+    }
+  }
+
+  // .MuiSvgIcon-root {
+  //   color: rgba(255, 255, 255, 0.3) !important;
+  // }
+
+  .MuiTablePagination-menuItem {
+    color: black;
+  }
+
+  // .MuiDivider-root {
+  //   border-color: var(--color-primary) !important;
+  // }
+
+  .MuiTableBody-root .MuiTableRow-root {
+    .MuiTableCell-root
+.MuiSvgIcon-root
+// , .MuiTableBody-root
+// .MuiTableRow-root
+// .MuiTableCell-root
+// > .MuiIconButton-root
+// .MuiSvgIcon-root
+    {
+      // width: 2.5rem;
+      // height: 2.5rem;
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    &:hover {
+      .MuiTableCell-root
+      .MuiSvgIcon-root
+      // , .MuiTableBody-root
+      // .MuiTableRow-root
+      // .MuiTableCell-root
+      // > .MuiIconButton-root
+      // .MuiSvgIcon-root
+      {
+        // width: 2.5rem;
+        // height: 2.5rem;
+        color: rgba(255, 255, 255) !important;
+      }
+    }
+  }
+}
+
+#tableContainer {
+  img {
+    max-height: 1.5rem;
+  }
+}

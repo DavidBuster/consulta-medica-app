@@ -1,0 +1,28 @@
+.investmentActionsContainer {
+  display: flex;
+  gap: var(--length-small-1);
+
+  > * {
+    width: 32px;
+    height: 32px;
+  }
+
+  .MuiSvgIcon-root {
+    color: white !important;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Mui-readOnly {
+  color: rgba(0, 0, 0, 0.35) !important;
+}
+
+.highlightTextfield .MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-secondary);
+  border-width: 2px;
+}

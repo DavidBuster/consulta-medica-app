@@ -1,0 +1,10 @@
+.MuiPaginationItem-root.Mui-disabled {
+  background-color: transparent !important;
+}
+
+.announcementsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--length-medium-2);
+  margin-bottom: var(--length-medium-3);
+}

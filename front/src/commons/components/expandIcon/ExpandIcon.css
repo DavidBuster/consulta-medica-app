@@ -1,0 +1,28 @@
+.crossVert,
+.crossHor {
+	transition: transform 0.3s ease-in-out;
+	background-color: grey;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.MuiTableBody-root > .MuiTableRow-root:hover .crossHor,
+.MuiTableBody-root > .MuiTableRow-root:hover .crossVert {
+	background-color: white;
+}
+
+.expanded .crossVert {
+	transform: translate(-50%, -50%) rotate(90deg);
+	background-color: white;
+}
+
+.highlightedRow .crossHor,
+.highlightedRow .crossVert {
+	background-color: white;
+}
+
+.expanded .crossHor {
+	transform: translate(-50%, -50%) rotate(180deg);
+}

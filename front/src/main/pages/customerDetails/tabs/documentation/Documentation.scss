@@ -1,0 +1,9 @@
+.documentationTab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--length-medium-2);
+
+  > * {
+    flex: 1 1 0;
+  }
+}

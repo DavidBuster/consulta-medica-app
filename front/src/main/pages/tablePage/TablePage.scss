@@ -1,0 +1,10 @@
+.tableFilters {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--length-medium-1);
+
+  button {
+    height: 100%;
+  }
+}

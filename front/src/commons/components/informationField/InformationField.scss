@@ -1,0 +1,25 @@
+$icon-size: 1.5rem;
+
+.informationFieldIcon {
+  margin-right: 1rem;
+  .MuiSvgIcon-root {
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+
+.informationFieldTitle {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.informationFieldValueRow {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
+
+.informationFieldValueRow {
+  display: flex;
+  text-wrap: nowrap;
+}

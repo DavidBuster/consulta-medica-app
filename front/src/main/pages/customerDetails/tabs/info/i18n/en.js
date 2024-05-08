@@ -1,0 +1,35 @@
+const locale = {
+  PROFILE_INFORMATION: "Profile information",
+  FULL_NAME: "Full name",
+  ADDRESS: "Address",
+  COUNTRY_OF_RESIDENCE: "Country of residence",
+  BIRTHDAY: "Birthday",
+  PHONE: "Phone",
+  EMAIL: "Email",
+  DOCUMENT_TYPE: "Document type",
+  DOCUMENT_NUMBER: "Document number",
+  EXPIRACY_DATE: "Expiracy date",
+  PEP: "PEP (Politically Exposed Person)",
+  CODE: "Code",
+  VERIFIED: "Verified",
+  NOT_VERIFIED: "Not verified",
+  EDIT: "Edit",
+  SAVE: "Save",
+  CANCEL: "Cancel",
+  YES: "Yes",
+  NO: "No",
+  CONFIRMATION: "Confirmation",
+  CONFIRM_SAVE_INFO:
+    "The new user information will be saved, do you want to continue?",
+  INFO_EDITED_SUCCESSFULLY: "Information edited successfully",
+  OK: "Ok",
+  CONFIRM_APPROVE_PROFILE:
+    "The profile will be approved, do you want to continue?",
+  PROFILE_APPROVED_SUCCESSFULLY: "Profile approved successfully",
+  APPROVE_PROFILE: "Approve profile",
+  CONFIRM_APPROVE_KYC: "The KYC will be approved, do you want to continue?",
+  KYC_APPROVED_SUCCESSFULLY: "KYC approved successfully",
+  APPROVE_KYC: "Approve KYC",
+};
+
+export default locale;
