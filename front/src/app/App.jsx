@@ -53,17 +53,7 @@ export const AppRoutes = () => {
   return (
     <>
       {displayNavBars && <NavBarLateral />}
-      <div
-        className="appPage"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          // width: "100%",
-          flex: "1 1 0",
-          justifyContent: "center",
-          overflow: "hidden",
-        }}
-      >
+      <div className="appPage">
         {displayNavBars && <NavBarTop />}
         <Routes>
           {Object.values(routesDict)

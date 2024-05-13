@@ -7,6 +7,7 @@
 // import PersonIcon from "@mui/icons-material/Person";
 // import BadgeIcon from "@mui/icons-material/Badge";
 import { Login } from "../main/pages/login/Login";
+import { Home } from "../main/pages/login/home/Home";
 // import { TablePage } from "../main/pages/tablePage/TablePage";
 // import { CustomerDetails } from "../main/pages/customerDetails/CustomerDetails";
 // import { Bulletin } from "../main/pages/bulletin/Bulletin";
@@ -22,6 +23,14 @@ export const routesDict = {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/home",
+      element: (
+        // <Page>
+        <Home />
+        // </Page>
+      ),
     },
     // {
     //   path: "/customer/:id",

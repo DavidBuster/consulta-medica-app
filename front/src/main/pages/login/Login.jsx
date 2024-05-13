@@ -15,7 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import i18n from "../../../i18n";
-import { crowdServices } from "../../../app/services/TiroPichonServices";
+import { tiroPichonServices as TiroPichonServices } from "../../../app/services/TiroPichonServices";
 import en from "./i18n/en";
 import es from "./i18n/es";
 import { UnAuthorizedPage } from "../../../commons/components/unAuthorizedPage/UnAuthorizedPage";
@@ -57,27 +57,26 @@ export const Login = () => {
     ev.preventDefault();
     Loading.circle();
 
-    crowdServices
-      .signInWithEmailAndPass(form.email, form.password)
+    TiroPichonServices.signInWithEmailAndPass(form.email, form.password)
       .then((response) => {
-        localStorage.setItem(
-          import.meta.env.VITE_APP_LOCAL_STORAGE_EMAIL_KEY,
-          response.data.email
-        );
-        localStorage.setItem(
-          import.meta.env.VITE_APP_LOCAL_STORAGE_NAME_KEY,
-          response.data.FullName
-        );
+        // localStorage.setItem(
+        //   import.meta.env.VITE_APP_LOCAL_STORAGE_EMAIL_KEY,
+        //   response.data.email
+        // );
+        // localStorage.setItem(
+        //   import.meta.env.VITE_APP_LOCAL_STORAGE_NAME_KEY,
+        //   response.data.FullName
+        // );
         localStorage.setItem(
           import.meta.env.VITE_APP_LOCAL_STORAGE_TOKEN_KEY,
           response.data.token
         );
-        const timerStart = Date.now();
-        localStorage.setItem(
-          import.meta.env.VITE_APP_LOCAL_STORAGE_START_TOKEN_TIME_KEY,
-          timerStart
-        );
-        navigate("/kycPending");
+        // const timerStart = Date.now();
+        // localStorage.setItem(
+        //   import.meta.env.VITE_APP_LOCAL_STORAGE_START_TOKEN_TIME_KEY,
+        //   timerStart
+        // );
+        navigate("/home");
       })
       .finally(() => Loading.remove());
   };

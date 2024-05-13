@@ -8,13 +8,20 @@ import {
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-class CrowdServices {
+class TiroPichonServices {
   // Login
-  signInWithEmailAndPass = async (email, password) =>
-    this.callApi("users/authenticate2FA", {
-      email,
+  signInWithEmailAndPass = async (username, password) =>
+    this.callApi("auth/login", {
+      username,
       password,
     });
+
+  savePreferences = (list) =>
+    this.callApi("player/preferences", {
+      list,
+    });
+
+  getPlayersList = () => this.callApi("players");
 
   callApi = async (url, body = null, config = {}, method) => {
     // const tokenAutoRefreshDelay = 840_000;
@@ -86,4 +93,4 @@ class CrowdServices {
 
 const methodTypes = { put: "put", post: "post", get: "get" };
 
-export const crowdServices = new CrowdServices();
+export const tiroPichonServices = new TiroPichonServices();

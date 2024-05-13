@@ -3,23 +3,23 @@ const playersRouter = require("express").Router();
 const Player = require("../models/player");
 
 playersRouter.get("/", async (request, response) => {
-  const players = await Player.find({}).populate("notes", {
-    content: 1,
-    important: 1,
-  });
-  response.json(players);
+  const players = await Player.find({});
+
+  console.log("PLAT", players, typeof players);
+
+  response.json({ list: players });
 });
 
 playersRouter.post("/", async (request, response) => {
-  const { username, name, password } = request.body;
+  const { firstName, lastName } = request.body;
 
-  const saltRounds = 10;
-  const passwordHash = await bcrypt.hash(password, saltRounds);
+  // const saltRounds = 10;
+  // const passwordHash = await bcrypt.hash(password, saltRounds);
 
   const player = new Player({
-    username,
-    name,
-    passwordHash,
+    firstName,
+    lastName,
+    // passwordHash,
   });
 
   const savedPlayer = await player.save();
