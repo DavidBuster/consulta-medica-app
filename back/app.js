@@ -1,3 +1,4 @@
+const path = require("path");
 const config = require("./utils/config");
 const express = require("express");
 require("express-async-errors");
