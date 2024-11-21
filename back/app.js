@@ -34,6 +34,11 @@ app.use("/api/users", usersRouter);
 app.use("/api/notes", notesRouter);
 app.use("/api/players", playersRouter);
 
+// Middleware para manejar rutas del frontend (para SPA)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 
