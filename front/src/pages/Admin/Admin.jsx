@@ -19,6 +19,8 @@ const NoteForm = () => {
   const navigate = useNavigate();
 
   const API_URL = process.env.REACT_APP_API_URL;
+  console.log("API_URL", API_URL);
+  console.log("XXX", `${API_URL}/api/notes`);
 
   // Cargar notas cuando el componente se monta
   useEffect(() => {

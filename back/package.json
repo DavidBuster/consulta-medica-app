@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node index.js",
+    "start": "npm-run-all --sequence build-frontend start-backend",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "test": "cross-env NODE_ENV=test node --test"
+    "test": "cross-env NODE_ENV=test node --test",
+    "build-frontend": "cd ../front && npm install && npm run build && cp -r ../front/dist/* ./back/dist",
+    "start-backend": "cross-env NODE_ENV=production node back/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +27,7 @@
     "@stylistic/eslint-plugin-js": "^1.6.2",
     "eslint": "^8.56.0",
     "nodemon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
     "supertest": "^6.3.4"
   }
 }
