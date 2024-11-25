@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --sequence build-frontend start-backend",
-    "dev": "cross-env NODE_ENV=development nodemon back/index.js",
+    "start": "npm run build-frontend && npm run start-backend",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test node --test",
-    "build-frontend": "cd ../front && npm install && npm run build && mkdir -p ../back/dist && cp -r ../front/dist/* ../back/dist/",
-    "start-backend": "cross-env NODE_ENV=production node back/index.js"
+    "build-frontend": "cd ../front && npm install && npm run build && mkdir -p ./public && cp -r ../front/dist/* ./public/",
+    "start-backend": "cross-env NODE_ENV=production node index.js"
   },
   "author": "",
   "license": "ISC",
