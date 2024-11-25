@@ -30,19 +30,14 @@ export const Home = () => {
     fetchData(); // Llamada a la función
   }, []); // El array vacío asegura que este efecto solo se ejecuta una vez
 
+  console.log("RESPONSE", response);
+
   return (
     <div>
       <div>{t("title")}</div>
       <div>{t("text")}</div>
       {response?.map((note) => (
-        <div>
-          {Object.entries(note).map((key, value) => (
-            <div>
-              {key}
-              {value}
-            </div>
-          ))}
-        </div>
+        <div>{note.content}</div>
       ))}
     </div>
   );

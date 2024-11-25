@@ -7,7 +7,6 @@ const cors = require("cors");
 const loginRouter = require("./controllers/login");
 const usersRouter = require("./controllers/users");
 const notesRouter = require("./controllers/notes");
-const playersRouter = require("./controllers/players");
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
@@ -33,7 +32,6 @@ app.use(middleware.requestLogger);
 app.use("/api/auth", loginRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/notes", notesRouter);
-app.use("/api/players", playersRouter);
 
 // Middleware para manejar rutas del frontend (para SPA)
 app.get("*", (req, res) => {

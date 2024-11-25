@@ -15,17 +15,18 @@ import App from "./pages/App/App.jsx";
 import { Home } from "./pages/Home/Home.jsx";
 import { News } from "./pages/News/News.jsx";
 import Admin from "./pages/Admin/Admin.jsx";
+import Login from "./pages/Login/Login.jsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navigate to="/home" replace />, // Redirección al acceder a `/`
+  },
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "/",
-        element: <Navigate to="/home" replace />, // Redirección al acceder a `/`
-      },
       {
         path: "/home",
         element: <Home />,
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         element: <News />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/admin",

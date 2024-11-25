@@ -29,6 +29,11 @@ const note = new Note({
   important: true,
 });
 
+// note.save().then((result) => {
+//   console.log("note saved!", result);
+//   mongoose.connection.close();
+// });
+
 Note.find({}).then((result) => {
   console.log("then");
   result.forEach((note) => {
@@ -36,8 +41,3 @@ Note.find({}).then((result) => {
   });
   mongoose.connection.close();
 });
-
-// note.save().then((result) => {
-//   console.log("note saved!", result);
-//   mongoose.connection.close();
-// });
