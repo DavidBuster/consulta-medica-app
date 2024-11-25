@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "npm run build-frontend && npm run start-backend",
-    "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "test": "cross-env NODE_ENV=test node --test",
-    "build-frontend": "cd ../front && npm install && npm run build && mkdir -p ./public && cp -r ../front/dist/* ./public/",
-    "start-backend": "cross-env NODE_ENV=production node index.js"
-  },
+"scripts": {
+  "start": "echo 'Starting build process...' && npm run build-frontend && npm run start-backend",
+  "dev": "cross-env NODE_ENV=development nodemon index.js",
+  "test": "cross-env NODE_ENV=test node --test",
+  "build-frontend": "echo 'Building frontend...' && cd ../front && npm install && npm run build && echo 'Frontend build completed' && mkdir -p ./public && cp -r ../front/dist/* ./public/",
+  "start-backend": "echo 'Starting backend server...' && cross-env NODE_ENV=production node index.js"
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
