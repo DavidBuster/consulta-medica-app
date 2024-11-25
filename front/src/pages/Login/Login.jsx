@@ -17,6 +17,8 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate(); // Hook para redirigir
   const API_URL = process.env.REACT_APP_API_URL;
+  console.log("API_URLaaaaaaaaa", API_URL);
+  console.log("XXX", `${API_URL}/api/notes`);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
