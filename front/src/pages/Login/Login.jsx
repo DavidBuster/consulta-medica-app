@@ -16,7 +16,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate(); // Hook para redirigir
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = import.meta.env.VITE_API_URL;
   console.log("API_URLaaaaaaaaa", API_URL);
   console.log("XXX", `${API_URL}/api/notes`);
 
