@@ -25,7 +25,7 @@ mongoose
   });
 
 app.use(cors());
-app.use(express.static("dist"));
+app.use(express.static("public"));
 app.use(express.json());
 app.use(middleware.requestLogger);
 
@@ -35,7 +35,7 @@ app.use("/api/notes", notesRouter);
 
 // Middleware para manejar rutas del frontend (para SPA)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.use(middleware.unknownEndpoint);

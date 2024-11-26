@@ -15,6 +15,7 @@ export const Home = () => {
   const { t } = useTranslation("home");
   const [response, setResponse] = useState();
   const API_URL = process.env.REACT_APP_API_URL;
+  console.log("LATEST COMMIT");
   console.log("API_URL", API_URL);
   console.log("XXX", `${API_URL}/api/notes`);
 
