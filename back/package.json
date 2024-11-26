@@ -7,7 +7,7 @@
     "start": "echo 'Starting build process...' && npm run start-backend",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test node --test",
-    "build-frontend": "echo 'Building frontend...' && cd ../front && npm install && npm run build && echo 'Frontend build completed' && mkdir -p ./public && cp -r ../front/dist/* ./public/",
+    "build-frontend": "echo 'Building frontend...' && cd ../front && npm install && npm run build && echo 'Frontend build completed' && cd ../back && mkdir -p ./public && cp -r ../front/dist/* ./public/ && echo 'Files copied to back/public directory successfully'",
     "start-backend": "echo 'Starting backend server...' && cross-env NODE_ENV=production node index.js"
   },
   "author": "",
