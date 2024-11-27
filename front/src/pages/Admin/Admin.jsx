@@ -19,8 +19,6 @@ const NoteForm = () => {
   const navigate = useNavigate();
 
   const API_URL = import.meta.env.VITE_API_URL;
-  console.log("API_URL", API_URL);
-  console.log("XXX", `${API_URL}/api/notes`);
 
   // Cargar notas cuando el componente se monta
   useEffect(() => {

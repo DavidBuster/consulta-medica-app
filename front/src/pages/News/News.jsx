@@ -12,5 +12,7 @@ if (!i18n.hasResourceBundle("es", "news")) {
 
 export const News = () => {
   const { t } = useTranslation("news");
+
+  console.log("NEWS!");
   return <div>{t("title")}</div>;
 };

@@ -20,19 +20,23 @@ import Login from "./pages/Login/Login.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/home" replace />, // Redirección al acceder a `/`
+    element: <Navigate to="/en/home" replace />, // Redirección al acceder a `/`
   },
   {
-    path: "/",
+    path: "/:lang",
+    element: <Navigate to="/en/home" replace />, // Redirección al acceder a `/`
+  },
+  {
+    path: "/:lang",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/home",
+        path: "home",
         element: <Home />,
       },
       {
-        path: "/news",
+        path: "news",
         element: <News />,
       },
     ],

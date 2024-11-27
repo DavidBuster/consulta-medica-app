@@ -15,6 +15,11 @@ const resources = {
       "Welcome to React": "Bienvenue à React et react-i18next",
     },
   },
+  nl: {
+    translation: {
+      "Welcome to React": "Bienvenue à React et react-i18next",
+    },
+  },
 };
 
 i18n
@@ -24,7 +29,8 @@ i18n
     lng: "es", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option
-
+    supportedLngs: Object.keys(resources), // derivar idiomas soportados de `resources`
+    fallbackLng: "en", // idioma de respaldo
     interpolation: {
       escapeValue: false, // react already safes from xss
     },
