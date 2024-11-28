@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3001:3001" # Mapea el puerto 3000 del contenedor al 3000 de la máquina
+    volumes:
+      - ./src:/app/src # Mapea el directorio src entre tu máquina local y el contenedor para desarrollo
+    # environment:
+    #   NODE_ENV: development # Establece el entorno como desarrollo en el contenedor. Ya está definida en los scripts del package.json
+    command: npm run dev # Usa nodemon para recarga automática en desarrollo
+    env_file:
+      - .env # Carga las variables del archivo .env

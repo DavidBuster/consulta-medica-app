@@ -1,0 +1,12 @@
+# Ignorar node_modules para evitar copiar las dependencias locales
+node_modules
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Ignorar archivos del sistema operativo (como los archivos ocultos de macOS)
+.DS_Store
