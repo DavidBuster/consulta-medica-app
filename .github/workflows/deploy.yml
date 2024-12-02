@@ -40,6 +40,7 @@ jobs:
 
       - name: Deploy to Fly.io
         run: |
+          export PATH=$HOME/.fly/bin:$PATH
           flyctl deploy --config back/fly.toml
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
