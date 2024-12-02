@@ -18,15 +18,21 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Build frontend
+      - name: Install backend dependencies
+        run: |
+          cd back
+          npm install
+
+      - name: Build frontend and prepare for backend
         run: |
           cd back
           npm run build-frontend
 
-      - name: Set up Fly.io CLI
-        uses: fly-apps/flyctl-actions@v1
-        with:
-          flyctl_version: "latest"
+      - name: Install Fly.io CLI
+        run: |
+          curl -L https://fly.io/install.sh | sh
+          export PATH=$HOME/.fly/bin:$PATH
+          flyctl version
 
       - name: Deploy to Fly.io
         run: |
