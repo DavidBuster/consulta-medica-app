@@ -1,12 +1,8 @@
-# fly.toml app configuration file generated for consulta-medica-app on 2024-12-02T13:11:34+01:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
 app = 'consulta-medica-app'
 primary_region = 'mad'
 
 [build]
+  dockerfile = "./back/Dockerfile"
 
 [http_service]
   internal_port = 3001
@@ -20,4 +16,4 @@ primary_region = 'mad'
   size = 'shared-cpu-1x'
 
 [resources]
-  memory = 256  # Puedes cambiar a cualquier valor que necesites (en MB)
+  memory = 256
