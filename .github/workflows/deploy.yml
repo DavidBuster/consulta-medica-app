@@ -24,7 +24,7 @@ jobs:
           npm run build-frontend
 
       - name: Set up Fly.io CLI
-        uses: superfly/flyctl-action@v1
+        uses: fly-apps/flyctl-actions@v1
         with:
           flyctl_version: "latest"
 
