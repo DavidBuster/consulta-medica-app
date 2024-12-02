@@ -3,6 +3,8 @@ primary_region = 'mad'
 
 [build]
   dockerfile = "./Dockerfile"
+  [build.args]
+    NODE_VERSION = "22"
 
 [http_service]
   internal_port = 3001
