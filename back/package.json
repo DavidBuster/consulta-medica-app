@@ -9,8 +9,7 @@
     "test": "cross-env NODE_ENV=test node --test",
     "build-frontend": "echo 'Building frontend...' && cd ../front && npm install && npm run build && echo 'Frontend build completed' && cd ../back && mkdir -p ./public && cp -r ../front/dist/* ./public/ && echo 'Files copied to back/public directory successfully'",
     "start-backend": "echo 'Starting backend server...' && cross-env NODE_ENV=production node src/index.js",
-    "build-frontend-local": "echo Building frontend... && cd ..\\front && npm install && npm run build && echo 'Frontend build completed' && cd ..\\back && echo 'AAAAA' && if not exist public (mkdir public) && echo 'BBBBBB' && xcopy ..\\front\\dist\\* public\\ /s /e /y && echo 'CCCCC' && echo 'Files copied to back\\public directory successfully'",
-    "build:ui": "@powershell Remove-Item -Recurse -Force public && cd ../front && npm run build && @powershell Copy-Item ../front/dist/* -Recurse -Destination ../back/public",
+    "build:ui": "@powershell Remove-Item -Recurse -Force public && cd ../front && npm run build && @powershell Copy-Item dist -Recurse ../back/public",
     "deploy": "fly deploy",
     "deploy-full": "npm run build:ui && npm run deploy"
   },
