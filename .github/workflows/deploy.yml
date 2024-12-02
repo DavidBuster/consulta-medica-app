@@ -31,8 +31,12 @@ jobs:
       - name: Install Fly.io CLI
         run: |
           curl -L https://fly.io/install.sh | sh
-          export PATH=$HOME/.fly/bin:$PATH
+          echo "PATH: $HOME/.fly/bin:$PATH"
+          export PATH="$HOME/.fly/bin:$PATH"
           flyctl version
+
+      - name: Debug PATH
+        run: echo $PATH
 
       - name: Deploy to Fly.io
         run: |
