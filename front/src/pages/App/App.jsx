@@ -8,6 +8,7 @@ import en from "./i18n/en.json";
 import nl from "./i18n/nl.json";
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 if (!i18n.hasResourceBundle("es", "app")) {
   i18n.addResourceBundle("es", "app", es, true, true);
@@ -17,11 +18,28 @@ if (!i18n.hasResourceBundle("es", "app")) {
 }
 
 const App = () => {
-  const { t } = useTranslation("app");
+  const { t, i18n } = useTranslation("app");
   const location = useLocation();
 
   // Extraer el idioma del path
   const currentLang = location.pathname.split("/")[1]; // 'en', 'es', etc.
+
+  useEffect(() => {
+    const availableLanguages = i18n.options.supportedLngs.filter(
+      (language) => language !== "cimode"
+    );
+    console.log(
+      "currentLang",
+      currentLang,
+      "availableLanguages",
+      availableLanguages
+    );
+    console.log("i18n", i18n);
+    if (availableLanguages.includes(currentLang)) {
+      console.log("currentLang 2222222222222", currentLang);
+      i18n.changeLanguage(currentLang); // Cambia el idioma en i18n
+    }
+  }, [location]);
 
   // Quitar el idioma del path para obtener la ruta base
   const normalizedPath = location.pathname.replace(`/${currentLang}`, "");
@@ -47,24 +65,16 @@ const App = () => {
         </div>
         <div className="tabs">
           <Tabs value={normalizedPath}>
-            {routes.map((route) => {
-              console.log(
-                "PATH",
-                route.path,
-                currentLang,
-                `${currentLang}${route.path}`
-              );
-              return (
-                <Tab
-                  key={route.path}
-                  label={t(route.label)}
-                  value={route.path}
-                  component={Link}
-                  to={`/${currentLang}${route.path}`}
-                  // to={route.path}
-                />
-              );
-            })}
+            {routes.map((route) => (
+              <Tab
+                key={route.path}
+                label={t(route.label)}
+                value={route.path}
+                component={Link}
+                to={`/${currentLang}${route.path}`}
+                // to={route.path}
+              />
+            ))}
           </Tabs>
         </div>
         <div className="pageTitle">

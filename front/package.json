@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "full-build": "echo 'Building frontend...' && vite build && echo 'Frontend build completed' && cd ../back && mkdir -p ./public && cp -r ../front/dist/* ./public/ && echo 'Files copied to back/public directory successfully'",
     "lint": "eslint .",
     "preview": "vite preview"
   },

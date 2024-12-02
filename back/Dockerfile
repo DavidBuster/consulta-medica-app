@@ -15,7 +15,7 @@ RUN npm install --verbose
 COPY . .
 
 # Expone el puerto 3000 para la aplicación
-EXPOSE 3000
+EXPOSE 3001
 
 # # Configura la variable de entorno (opcional, se puede personalizar en docker-compose). Ya está definida en los scripts del package.json
 # ENV NODE_ENV=production

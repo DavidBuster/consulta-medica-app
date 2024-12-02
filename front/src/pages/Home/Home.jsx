@@ -17,19 +17,16 @@ export const Home = () => {
   const { t } = useTranslation("home");
   const [response, setResponse] = useState();
   const API_URL = import.meta.env.VITE_API_URL;
-  // console.log("LATEST COMMIT");
-  // console.log("API_URL", API_URL);
-  // console.log("XXX", `${API_URL}/api/notes`);
 
   useEffect(() => {
     // Función asíncrona para manejar la solicitud
     const fetchData = async () => {
       try {
         const res = await axios.get(`${API_URL}/api/notes`);
+        // const res = await axios.get("/api/notes");
         setResponse(res.data); // Actualizamos el estado con los datos obtenidos
-        // console.log("RESPO", res.data);
       } catch (error) {
-        // console.error("Error fetching data:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
